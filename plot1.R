@@ -13,6 +13,7 @@ proj1GetData <- function() {
 }
 
 proj1p1 <- function(){
+    library(data.table)
     library(dplyr)
     message("This function assumes your extracted data is at your working directory")
     message("It should be called household_power_consumption.txt.")
@@ -53,4 +54,7 @@ proj1p1 <- function(){
          cex.lab = 0.8)
     dev.off()
     message("Plot is created in the working directory, file name: ", plotFName)
-    }
+    message("Some information about it:")
+    return(file.info(plotFName))
+
+}

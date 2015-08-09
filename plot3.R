@@ -13,6 +13,7 @@ proj1GetData <- function() {
 }
 
 proj1p3 <- function(){
+    library(data.table)
     library(dplyr)
     message("This function assumes your extracted data is at your working directory")
     message("It should be called household_power_consumption.txt.")
@@ -77,5 +78,7 @@ proj1p3 <- function(){
     
     # Now set locale to what it was before
     Sys.setlocale("LC_TIME", mySysLocale)
-    return("Done.")
+    message("Some information about it:")
+    return(file.info(plotFName))
+
 }
